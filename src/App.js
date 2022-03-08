@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import ArticlePage from './pages/ArticlePage';
-import ArticlesList from './pages/ArticlesList';
+import ArticlesListPage from './pages/ArticlesListPage';
 import AboutPage from './pages/AboutPage';
 import Navbar from './Navbar';
 
@@ -16,8 +16,8 @@ function App() {
           <div id='page-body'>
             <Routes>
               <Route exact path='/' element={ <HomePage /> }/>
-              <Route path='/article' element={ <ArticlePage /> }/>
-              <Route path='/articles-list' element={ <ArticlesList /> }/>
+              <Route path='/article/:name' element={ <ArticlePage /> }/>
+              <Route path='/articles-list' element={ <ArticlesListPage /> }/>
               <Route path='/about' element={ <AboutPage /> }/>
             </Routes>
           </div>       
