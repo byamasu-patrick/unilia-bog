@@ -1,0 +1,12 @@
+import React from 'react';
+
+const ArticlesList = () => {
+    return (
+        <React.Fragment>
+            <h1>Articles</h1>            
+        </React.Fragment>
+    );
+};
+
+export default ArticlesList;
+
