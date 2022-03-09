@@ -2,13 +2,14 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import articleData from './article-content';
 import ArticlesList from '../components/ArticlesList';
+import NotFoundPage from './NotFoundPage';
 
 const ArticlePage = () => {
 
     const params = useParams();
     const article = articleData.find(article => article.name === params.name )
     // learn-react
-    if(!article) return (<h1>Article doesn't exist</h1>)
+    if(!article) return (<NotFoundPage />)
 
     const otherArticles = articleData.filter(singleArticle => singleArticle.name !== article.name);
 
@@ -20,7 +21,7 @@ const ArticlePage = () => {
                     <p key={key}>{paragraph}</p>
                 )
             }) }   
-            <h1>Related Articles</h1>
+            <h2>Other Related Articles</h2>
             <ArticlesList articles={ otherArticles }/>    
         </React.Fragment>
     );
